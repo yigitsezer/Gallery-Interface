@@ -13,7 +13,7 @@ This is the "Car Gallery Interface" we have created for our Database Management 
 
 The UI is used to insert and view data from the gallery database such as creating a car sale, adding employees, getting all the cars from the database fitting specific descriptions (using filters).
 
-This interface is specifically created for the MySQL Database we have created and it's CREATE statements are included in the written report.  ~~For now it can be used by the login credentals I have left in the code but I will surely remove them, check Extras for more information about that. ~~
+This interface is specifically created for the MySQL Database we have created and it's CREATE statements are included in the written report.  <strike>For now it can be used by the login credentals I have left in the code but I will surely remove them, check Extras for more information about that.</strike>
 
 ## Refresh tables
 

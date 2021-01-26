@@ -1,6 +1,6 @@
 ## As of 26.01.21
 
-I have removed server credentials and replaced with localhost placeholders, edit them in the Main.java
+This should be a clean new repo without any commits. I have removed server credentials and replaced with localhost placeholders, edit them in the Main.java
 ```
     static String SERVER = "jdbc:mysql://localhost:3306/database";
     static String USER = "admin";

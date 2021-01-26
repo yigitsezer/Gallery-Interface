@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox spacing="8">
+        <TableView prefHeight="350" prefWidth="400.0" fx:id="repairHistoryTable"/>
+        <HBox>
+            <VBox>
+                <Text text="Part"/>
+                <TextField maxWidth="256" fx:id="repairPart"/>
+            </VBox>
+            <VBox>
+                <Text text="Cost"/>
+                <TextField maxWidth="256" fx:id="repairCost"/>
+            </VBox>
+        </HBox>
+        <Button text="Add repair" alignment="CENTER" fx:id="addRepairButton"/>
+    </VBox>
+</ScrollPane>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:id="root">
+    <Tab text="Arrange Sale">
+        <TabPane maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+            <Tab text="Sell car from the gallery">
+                <ScrollPane fitToHeight="true" fitToWidth="true">
+                    <VBox spacing="8" style="-fx-padding: 16 16 16 16;">
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                            <Text text="Car ID" />
+                            <TextField fx:id="sellCarId"/>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                            <Text text="Customer Name" />
+                            <TextField fx:id="sellCustomerName"/>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                            <Text text="Customer SSN" />
+                            <TextField fx:id="sellCustomerSsn"/>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                            <Text text="Price" />
+                            <TextField fx:id="sellCarPrice"/>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                            <Text text="Employee SSN" />
+                            <TextField fx:id="sellCarEmpSsn"/>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                            <Text text="Payment Type" />
+                            <TextField fx:id="sellCarPaymentType"/>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                            <Text text="Bank" />
+                            <TextField fx:id="sellCarBank"/>
+                        </HBox>
+                        <Button mnemonicParsing="false" text="Arrange Sale" onAction="#sellCar"/>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+            <Tab text="Buy car to the gallery">
+                <ScrollPane fitToHeight="true" fitToWidth="true">
+                    <HBox spacing="16" style="-fx-padding: 16 16 16 16;">
+                        <VBox spacing="8">
+                            <HBox alignment="CENTER_LEFT" spacing="8">
+                                <Text text="Car model" />
+                                <TextField fx:id="buyCarModel"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="8">
+                                <Text text="Car brand" />
+                                <TextField fx:id="buyCarBrand"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="8">
+                                <Text text="Car color" />
+                                <TextField fx:id="buyCarColor"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="8" >
+                                <Text text="Used" />
+                                <CheckBox fx:id="buyCarUsed"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="8" >
+                                <Text text="Car fuel type" />
+                                <TextField fx:id="buyCarFuelType"/>
+                            </HBox>
+                            <Button mnemonicParsing="false" text="Add to gallery" alignment="BOTTOM_LEFT" onAction="#buyCar"/>
+                        </VBox>
+                        <VBox spacing="8">
+                            <HBox alignment="CENTER_LEFT" spacing="8" >
+                                <Text text="Car kilometers" />
+                                <TextField fx:id="buyCarKm"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="8" >
+                                <Text text="Price" />
+                                <TextField fx:id="buyPrice"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="8" >
+                                <Text text="Employee SSN" />
+                                <TextField fx:id="buyEmpSsn"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="8" >
+                                <Text text="Customer SSN" />
+                                <TextField fx:id="buyCustomerSsn"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="8" >
+                                <Text text="Customer Name" />
+                                <TextField fx:id="buyCustomerName"/>
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                </ScrollPane>
+            </Tab>
+        </TabPane>
+    </Tab>
+    <Tab text="Cars">
+        <ScrollPane fitToHeight="true" fitToWidth="true">
+            <HBox fx:id="hboxcars" alignment="CENTER" spacing="16" style="-fx-padding: 16 16 16 16;">
+                <VBox spacing="16">
+                    <TableView prefHeight="${hboxcars.height}" fx:id="carsTable">
+                    </TableView>
+                </VBox>
+                <VBox alignment="CENTER_LEFT" spacing="8">
+                    <Text text="Filters" />
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="ID" />
+                        <TextField fx:id="findCarId"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Fuel Type" />
+                        <TextField fx:id="findCarFuelType"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Brand" />
+                        <TextField fx:id="findCarBrand"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Name" />
+                        <TextField fx:id="findCarName"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Color" />
+                        <TextField fx:id="findCarColor"/>
+                    </HBox>
+                    <HBox spacing="8">
+                        <Text text="Second Hand" /><CheckBox fx:id="findIsSecondHand"/>
+                    </HBox>
+                    <HBox spacing="8">
+                        <Text text="Unused" /><CheckBox fx:id="findIsUnused"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Price Range" />
+                        <TextField maxWidth="64" fx:id="findCarMinPrice"/>
+                        <Text text="₺" textAlignment="CENTER" />
+                        <Text text=" - " textAlignment="CENTER" />
+                        <TextField maxWidth="64" fx:id="findCarMaxPrice"/>
+                        <Text text="₺" textAlignment="CENTER" />
+                    </HBox>
+                    <HBox spacing="8">
+                        <Text text="Include sold cars" /><CheckBox fx:id="includeSold"/>
+                    </HBox>
+                    <Button alignment="CENTER_LEFT" text="Apply Filters" onAction="#rebuildCars"></Button>
+                </VBox>
+            </HBox>
+        </ScrollPane>
+    </Tab>
+    <Tab text="Employees">
+        <ScrollPane fitToHeight="true" fitToWidth="true">
+            <HBox fx:id="hboxemploee" alignment="CENTER" spacing="16" style="-fx-padding: 16 16 16 16;">
+                <VBox spacing="16">
+                    <TableView prefHeight="${hboxemploee.height}" prefWidth="300.0" fx:id="employeesTable"/>
+                    <HBox spacing="8">
+                        <Button mnemonicParsing="false" text="Add Employee" onAction="#openNewEmployeeWindow" />
+                        <Button mnemonicParsing="false" text="Remove Employee" onAction="#removeEmployee" />
+                    </HBox>
+                </VBox>
+                <VBox alignment="CENTER_LEFT" spacing="8">
+                    <Text text="Filters" />
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="SSN"/>
+                        <TextField fx:id="findEmployeeSsn"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Name"/>
+                        <TextField fx:id="findEmployeeName"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Title" />
+                        <TextField fx:id="findEmployeeTitle"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Salary Range" />
+                        <TextField maxWidth="64" fx:id="findEmployeeMinSalary"/>
+                        <Text text="₺" textAlignment="CENTER" />
+                        <Text text=" - " textAlignment="CENTER" />
+                        <TextField maxWidth="64" fx:id="findEmployeeMaxSalary"/>
+                        <Text text="₺" textAlignment="CENTER" />
+                    </HBox>
+                    <HBox spacing="8">
+                        <Text text="Include old employees" /><CheckBox fx:id="findEmployeeOld"/>
+                    </HBox>
+                    <Button alignment="CENTER_LEFT" text="Apply Filters" onAction="#rebuildEmployees"></Button>
+                </VBox>
+            </HBox>
+        </ScrollPane>
+    </Tab>
+    <Tab text="Employees History">
+        <ScrollPane fitToHeight="true" fitToWidth="true">
+            <HBox fx:id="bhoxhistoryemp" alignment="CENTER" spacing="16" style="-fx-padding: 16 16 16 16;">
+                <TableView prefHeight="${bhoxhistoryemp.height}" prefWidth="300.0" fx:id="employeesHistoryTable"/>
+                <VBox alignment="CENTER_LEFT" spacing="8">
+                    <Text text="Filters" />
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="ID"/>
+                        <TextField fx:id="findHistEmployeeId"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="SSN"/>
+                        <TextField fx:id="findHistEmployeeSsn"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Title" />
+                        <TextField fx:id="findHistEmployeeDesc"/>
+                    </HBox>
+                    <HBox spacing="8">
+                        <Text text="Include old employees" /><CheckBox fx:id="findHistEmployeeOld" selected="true"/>
+                    </HBox>
+                    <Button alignment="CENTER_LEFT" text="Apply Filters" onAction="#rebuildEmployeesHistory"></Button>
+                </VBox>
+            </HBox>
+        </ScrollPane>
+    </Tab>
+    <Tab text="Sale History">
+        <ScrollPane fitToHeight="true" fitToWidth="true">
+            <HBox fx:id="hboxsalehistory" alignment="CENTER" spacing="16" style="-fx-padding: 16 16 16 16;">
+                <TableView prefHeight="${hboxsalehistory.height}" prefWidth="300.0" fx:id="salesTable"/>
+                <VBox alignment="CENTER_LEFT" spacing="8">
+                    <Text text="Filters" />
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="ID"/>
+                        <TextField fx:id="salesId"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Date (YYYY-MM-DD)"/>
+                        <TextField fx:id="salesDate"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Customer SSN" />
+                        <TextField fx:id="salesCustomerSsn"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Car ID" />
+                        <TextField fx:id="salesCarId"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Invoice ID" />
+                        <TextField fx:id="salesInvoiceId"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Employee SSN" />
+                        <TextField fx:id="salesEmployeeSsn"/>
+                    </HBox>
+                    <HBox spacing="8">
+                        <Text text="Include customer sells" /><CheckBox fx:id="salesSell" selected="true"/>
+                    </HBox>
+                    <HBox spacing="8">
+                        <Text text="Include customer buys" /><CheckBox fx:id="salesBuy" selected="true"/>
+                    </HBox>
+                    <Button alignment="CENTER_LEFT" text="Apply Filters" onAction="#rebuildSalesHistory"></Button>
+                </VBox>
+            </HBox>
+        </ScrollPane>
+    </Tab>
+    <Tab text="Invoices">
+        <ScrollPane fitToHeight="true" fitToWidth="true">
+            <HBox fx:id="hboxinvoices" alignment="CENTER" spacing="16" style="-fx-padding: 16 16 16 16;">
+                <TableView prefHeight="${hboxinvoices.height}" prefWidth="300.0" fx:id="invoicesTable"/>
+                <VBox alignment="CENTER_LEFT" spacing="8">
+                    <Text text="Filters" />
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="ID"/>
+                        <TextField fx:id="invoiceId"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Bank"/>
+                        <TextField fx:id="invoiceBank"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Payment Type" />
+                        <TextField fx:id="invoicePaymentTpye"/>
+                    </HBox>
+                    <Button alignment="CENTER_LEFT" text="Apply Filters" onAction="#rebuildInvoices"></Button>
+                </VBox>
+            </HBox>
+        </ScrollPane>
+    </Tab>
+    <Tab text="Customers">
+        <ScrollPane fitToHeight="true" fitToWidth="true">
+            <HBox fx:id="hboxcustomers" alignment="CENTER" spacing="16" style="-fx-padding: 16 16 16 16;">
+                <VBox spacing="16">
+                    <TableView prefHeight="${hboxcustomers.height}" prefWidth="300.0" fx:id="customersTable"/>
+                </VBox>
+                <VBox alignment="CENTER_LEFT" spacing="8">
+                    <Text text="Filters" />
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="SSN"/>
+                        <TextField fx:id="customersSsn"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Text text="Name Surname"/>
+                        <TextField fx:id="customersName"/>
+                    </HBox>
+                    <Button alignment="CENTER_LEFT" text="Apply Filters" onAction="#rebuildCustomers"></Button>
+                </VBox>
+            </HBox>
+        </ScrollPane>
+    </Tab>
+</TabPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <VBox spacing="16" style="-fx-padding: 16 16 16 16;">
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Text text="Name" />
+                <TextField fx:id="newEmpName"/>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Text text="SSN" />
+                <TextField fx:id="newEmpSsn"/>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Text text="Title" />
+                <TextField fx:id="newEmpTitle"/>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Text text="Salary" />
+                <TextField fx:id="newEmpSalary"/>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Text text="Description" />
+                <TextField fx:id="newEmpDescription"/>
+            </HBox>
+            <Button mnemonicParsing="false" text="Add employee" fx:id="addNewEmployeeFinalButton"/>
+        </VBox>
+</ScrollPane>
